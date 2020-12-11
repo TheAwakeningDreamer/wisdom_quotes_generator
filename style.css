@@ -17,6 +17,10 @@ body {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 #main-nav {
   font-size: 20px;
   width: 100%;
@@ -89,12 +93,90 @@ body {
   margin-top: 75px;
 }
 
+.container .sidebar {
+  position: absolute;
+  padding-top: 70px;
+  top: 75px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  height: 100%;
+  background-color: #e30b5c;
+  transform: translateX(-300px);
+  transition: transform 0.3s linear;
+  overflow: hidden;
+}
+
+.container .sidebar.show {
+  transform: translateX(0px);
+}
+
+.container .sidebar h2 {
+  padding-bottom: 10px;
+  border-bottom: 3px solid #fff;
+}
+
+.container .sidebar ul {
+  padding: 0;
+}
+
+.container .sidebar a {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #fff;
+  transition: all 0.3s linear;
+}
+
+.container .sidebar a:hover {
+  color: #000080;
+}
+
+.container .sidebar a:last-child {
+  border: none;
+}
+
+.container .sidebar ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+
+.container .sidebar p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 33px;
+  width: 80%;
+  height: 5px;
+  background-color: #ccc;
+}
+
+.container .sidebar p {
+  padding: 40px 20px;
+  position: relative;
+}
+
 .container h1 {
   border-bottom: #fff 4px solid;
   padding-bottom: 10px;
 }
 
+.container #menu {
+  color: #fff;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  z-index: 10;
+}
+
 .quote-container {
+  position: relative;
   margin: 0 auto;
   width: 50%;
   margin-top: 50px;
@@ -104,8 +186,32 @@ body {
   padding: 20px;
 }
 
+.quote-container #hollowHeart i {
+  color: #fff;
+  transition: all 0.2s ease-in;
+}
+
+.quote-container #hollowHeart:hover i {
+  color: #e30b5c;
+  transform: scale(1.02);
+}
+
+.quote-container #share {
+  position: absolute;
+  right: 30px;
+  color: #fff;
+  transition: all 0.2s ease-in;
+}
+.quote-container #share:hover i {
+  color: #e30b5c;
+}
+
 .quote-container .quote-box {
   margin-bottom: 15px;
+}
+
+.quote-container .quote-box .fav {
+  color: #e30b5c;
 }
 
 .quote-container .quote-box #quote {
@@ -150,12 +256,16 @@ body {
 
 #main-footer {
   bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100px;
+  height: 110px;
   background-color: rgba(0, 17, 255, 0.199);
   display: flex;
 }
 
 #main-footer p {
   margin: auto;
+}
+
+@media (max-width: 760px) {
 }
