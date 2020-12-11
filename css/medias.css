@@ -1,0 +1,261 @@
+@media (max-width: 800px) {
+  #main-nav {
+    font-size: 20px;
+    width: 100%;
+    min-width: 400px;
+    height: 22vh;
+    background-color: #e30b5c;
+  }
+
+  #main-nav .nav-aligner {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  #main-nav .nav-aligner #website {
+    position: absolute;
+    display: block;
+    font-size: 25px;
+    width: 200px;
+    height: 80px;
+    margin: 0 50px auto;
+    top: 30px;
+    left: center;
+    color: #fff;
+    padding-bottom: 62px;
+    border-bottom: 5px solid #fff;
+  }
+
+  #main-nav .nav-aligner .nav {
+    display: flex;
+    margin-top: 70px;
+    margin-right: 80px;
+  }
+
+  #main-nav .nav-aligner .nav-links {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    margin-left: 20px;
+    margin-top: 40px;
+    transition: background-color 0.2s ease-in, font-weight 0.2s ease;
+  }
+
+  #main-nav .nav-aligner .nav-links:hover {
+    background-color: #140d75;
+    font-weight: bold;
+  }
+
+  #main-nav .nav-aligner .social {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 10%;
+    height: 207px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-left: 5px solid #fff;
+    border-radius: 0;
+  }
+
+  #main-nav .nav-aligner .social a {
+    margin-left: -3px;
+    margin-top: -2px;
+    color: #fff;
+    transition: transform 0.15s ease, color 0.5s ease;
+  }
+
+  #main-nav .nav-aligner .social a:hover {
+    transform: scale(0.98);
+    color: red;
+  }
+
+  .container {
+    margin-top: 75px;
+  }
+
+  .container .sidebar {
+    position: absolute;
+    padding-top: 70px;
+    top: 205px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 112.5%;
+    background-color: #e30b5c;
+    transform: translateX(-300px);
+    transition: transform 0.3s linear;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .container .sidebar.show {
+    transform: translateX(0px);
+  }
+
+  .container .sidebar h2 {
+    padding-bottom: 10px;
+    border-bottom: 3px solid #fff;
+  }
+
+  .container .sidebar ul {
+    padding: 0;
+  }
+
+  .container .sidebar a {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #fff;
+    transition: all 0.3s linear;
+  }
+
+  .container .sidebar a:hover {
+    color: #000080;
+  }
+
+  .container .sidebar a:last-child {
+    border: none;
+  }
+
+  .container .sidebar ul li {
+    list-style: none;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+
+  .container .sidebar p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 33px;
+    width: 80%;
+    height: 5px;
+    background-color: #ccc;
+  }
+
+  .container .sidebar p {
+    padding: 40px 20px;
+    position: relative;
+  }
+
+  .container h1 {
+    width: 400px;
+    margin: 0 auto;
+    border-bottom: #fff 4px solid;
+    padding-bottom: 10px;
+  }
+
+  .container #menu {
+    color: #fff;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    z-index: 10;
+  }
+
+  .quote-container {
+    position: relative;
+    margin: 0 auto;
+    width: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 20px;
+  }
+
+  .quote-container #hollowHeart i {
+    color: #fff;
+    transition: all 0.2s ease-in;
+  }
+
+  .quote-container #hollowHeart:hover i {
+    color: #e30b5c;
+    transform: scale(1.02);
+  }
+
+  .quote-container #share {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    transition: all 0.2s ease-in;
+  }
+  .quote-container #share:hover i {
+    color: #e30b5c;
+  }
+
+  .quote-container .quote-box {
+    margin-bottom: 15px;
+  }
+
+  .quote-container .quote-box .fav {
+    color: #e30b5c;
+  }
+
+  .quote-container .quote-box #quote {
+    font-size: 24px;
+    padding-bottom: 30px;
+    border-bottom: 5px solid #fff;
+  }
+
+  .quote-container .quote-box #quote {
+    font-size: 24px;
+  }
+
+  .quote-container .quote-box #author {
+    font-size: 21px;
+  }
+
+  .container .newQuote h3 {
+    margin-top: -10px;
+  }
+
+  .container button {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 25px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    transition: all 0.15s ease-in;
+  }
+
+  .container button:hover {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  .container button:active,
+  .container button:focus {
+    outline: none;
+  }
+
+  #main-footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background-color: rgba(0, 17, 255, 0.199);
+    display: flex;
+  }
+
+  #main-footer p {
+    margin: auto;
+  }
+}

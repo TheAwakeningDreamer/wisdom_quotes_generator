@@ -15,9 +15,9 @@ function fillHeart() {
 }
 
 function getNewQuote() {
-  // let id;
-  // id = Math.floor(Math.random() * 31 + 1);
-  // console.log(id);
+  let id;
+  id = Math.floor(Math.random() * 31 + 1);
+  console.log(id);
 
   const xhr = new XMLHttpRequest();
 
@@ -31,8 +31,8 @@ function getNewQuote() {
 
       console.log(quotes);
 
-      quoteUI.textContent = `"${quotes[0].quote}"`;
-      authorUI.textContent = `${quotes[0].author}`;
+      quoteUI.textContent = `"${quotes[id].quote}"`;
+      authorUI.textContent = `${quotes[id].author}`;
     }
   };
 
