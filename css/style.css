@@ -53,12 +53,13 @@ a {
   border-radius: 50px;
   margin-left: 20px;
   margin-top: 40px;
-  transition: background-color 0.2s ease-in, font-weight 0.2s ease;
+  font-weight: bold;
+
+  transition: background-color 0.2s ease-in;
 }
 
 #main-nav .nav-aligner .nav-links:hover {
   background-color: #140d75;
-  font-weight: bold;
 }
 
 #main-nav .nav-aligner .social {
@@ -202,6 +203,10 @@ a {
 .quote-container #hollowHeart:hover i {
   color: #e30b5c;
   transform: scale(1.02);
+}
+
+.quote-container #hollowHeart .fas {
+  color: #e30b5c;
 }
 
 .quote-container #share {

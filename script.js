@@ -15,21 +15,20 @@ function fillHeart() {
 }
 
 function getNewQuote() {
-  let id;
-  id = Math.floor(Math.random() * 31 + 1);
-  console.log(id);
-
   const xhr = new XMLHttpRequest();
 
   xhr.open('GET', 'quotes.json', true);
 
   xhr.onload = function () {
     if (this.status === 200) {
+      const quotes = JSON.parse(this.responseText);
       console.log(this.responseText);
 
-      const quotes = JSON.parse(this.responseText);
+      let id;
+      id = Math.floor(Math.random() * quotes.length + 1);
 
       console.log(quotes);
+      console.log(quotes.length);
 
       quoteUI.textContent = `"${quotes[id].quote}"`;
       authorUI.textContent = `${quotes[id].author}`;

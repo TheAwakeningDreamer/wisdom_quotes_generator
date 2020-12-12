@@ -67,11 +67,11 @@
   {
     "id": 15,
     "quote": "The wound is the place where the Light enters you.",
-    "author": ""
+    "author": "Rumi"
   },
   {
     "id": 16,
-    "quote": "I wish I could show you when you are lonely or in darkness the astonishing light of your own being.",
+    "quote": "I wish I could show you when you are lonely or in darkness, the Astonishing Light of Your Own Being.",
     "author": "Hafez"
   },
   {
@@ -101,7 +101,7 @@
   },
   {
     "id": 22,
-    "quote": "Nature is not Mute; it is man who is deaf",
+    "quote": "Nature is not mute; it is man who is deaf",
     "author": "Terence McKenna"
   },
   {
@@ -148,5 +148,10 @@
     "id": 31,
     "quote": "Words are, in my not-so-humble opinion, our most inexhaustible source of magic. Capable of both inflicting injury, and remedying it.",
     "author": "JK Rowling/Dumbledore"
+  },
+  {
+    "id": 32,
+    "quote": "Two men looked out from prison bars, One saw the mud, the other saw stars.",
+    "author": "Dale Carnegie"
   }
 ]

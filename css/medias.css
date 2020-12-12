@@ -3,7 +3,7 @@
     font-size: 20px;
     width: 100%;
     min-width: 400px;
-    height: 22vh;
+    height: 220px;
     background-color: #e30b5c;
   }
 
@@ -55,7 +55,7 @@
     flex-direction: column;
     position: absolute;
     top: 0;
-    right: 10px;
+    right: 20px;
     width: 10%;
     height: 207px;
     padding: 10px;
@@ -169,12 +169,11 @@
   .quote-container {
     position: relative;
     margin: 0 auto;
-    width: 400px;
+    width: 500px;
     margin-top: 50px;
     margin-bottom: 50px;
     border: 2px solid #fff;
     border-radius: 25px;
-    padding: 20px;
   }
 
   .quote-container #hollowHeart i {
@@ -207,13 +206,9 @@
   }
 
   .quote-container .quote-box #quote {
-    font-size: 24px;
+    font-size: 20px;
     padding-bottom: 30px;
     border-bottom: 5px solid #fff;
-  }
-
-  .quote-container .quote-box #quote {
-    font-size: 24px;
   }
 
   .quote-container .quote-box #author {
