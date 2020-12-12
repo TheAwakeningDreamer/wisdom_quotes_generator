@@ -1,7 +1,7 @@
-@media (max-width: 800px) {
+@media (max-width: 760px) {
   #main-nav {
     position: relative;
-    font-size: 20px;
+    font-size: 16px;
     width: 100%;
     min-width: 400px;
     height: 220px;
@@ -19,15 +19,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 25px;
+    font-size: 20px;
     width: 200px;
     height: 80px;
-    margin: 0 50px auto;
-    top: 30px;
-    left: center;
-    color: #fff;
+    margin: 20px 20%;
     padding-bottom: 62px;
     border-bottom: 5px solid #fff;
+    color: #fff;
   }
 
   #main-nav .nav-aligner .nav {
@@ -83,35 +81,38 @@
     margin-top: 75px;
   }
 
-  .container .sidebar {
+  .container #menu {
+    color: #fff;
     position: absolute;
-    padding-top: 70px;
-    top: 205px;
-    left: 0;
+    top: 50px;
+    left: 20px;
+    z-index: 10;
+  }
+
+  .container .sidebar {
+    display: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 300px;
-    height: 112.5%;
     background-color: #e30b5c;
-    transform: translateX(-300px);
+    transform: translateX(-100%);
     transition: transform 0.3s linear;
     overflow: hidden;
     z-index: 2;
   }
 
   .container .sidebar.show {
-    transform: translateX(0px);
+    transform: translateX();
   }
 
   .container .sidebar h2 {
     padding-bottom: 10px;
     border-bottom: 3px solid #fff;
-  }
-
-  .container .sidebar ul {
-    padding: 0;
   }
 
   .container .sidebar a {
@@ -130,6 +131,10 @@
 
   .container .sidebar a:last-child {
     border: none;
+  }
+
+  .container .sidebar ul {
+    padding: 0;
   }
 
   .container .sidebar ul li {
@@ -154,26 +159,27 @@
   }
 
   .container h1 {
-    width: 400px;
+    width: 300px;
+    line-height: 110%;
     margin: 0 auto;
     border-bottom: #fff 4px solid;
     padding-bottom: 10px;
   }
 
-  .container #menu {
-    color: #fff;
-    position: absolute;
-    top: 50px;
-    left: 20px;
-    z-index: 10;
+  .container h2 {
+    padding: 0 20px;
+  }
+
+  .container p {
+    padding: 0 80px;
   }
 
   .quote-container {
     position: relative;
-    margin: 0 auto;
-    width: 500px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    width: 300px;
+    height: 500px;
+    padding: 50px 0;
+    margin: 20px 10px 20px 10px;
     border: 2px solid #fff;
     border-radius: 25px;
   }
@@ -208,13 +214,13 @@
   }
 
   .quote-container .quote-box #quote {
-    font-size: 20px;
+    font-size: 18px;
     padding-bottom: 30px;
-    border-bottom: 5px solid #fff;
+    border-bottom: 3px solid #fff;
   }
 
   .quote-container .quote-box #author {
-    font-size: 21px;
+    font-size: 18px;
   }
 
   .container .newQuote h3 {

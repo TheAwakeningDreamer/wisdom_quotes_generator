@@ -4,6 +4,13 @@ const button = document.querySelector('.newQuote Button');
 const menu = document.querySelector('#menu');
 const sidebar = document.querySelector('.sidebar');
 const hollowHeart = document.querySelector('#hollowHeart i');
+const x = matchMedia('(max-width:760px');
+
+function mediaQueries() {
+  if (x.matches) {
+    menu.document.getElementByTagName('i').className = 'fas fa-share fa-2x';
+  }
+}
 
 function showMenu() {
   sidebar.classList.toggle('show');
@@ -30,7 +37,7 @@ function getNewQuote() {
       console.log(quotes);
       console.log(quotes.length);
 
-      quoteUI.textContent = `"${quotes[id].quote}"`;
+      quoteUI.textContent = `" ${quotes[id].quote} "`;
       authorUI.textContent = `${quotes[id].author}`;
     }
   };
