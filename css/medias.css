@@ -3,7 +3,6 @@
     position: relative;
     font-size: 16px;
     width: 100%;
-    min-width: 400px;
     height: 220px;
     background-color: #e30b5c;
   }
@@ -55,10 +54,11 @@
     flex-direction: column;
     position: absolute;
     top: 0;
-    right: 40px;
+    right: 20px;
     width: 10%;
     height: 100%;
     padding: 20px;
+    padding-top: 30px;
     background-color: transparent;
     border: none;
     border-left: 5px solid #fff;
