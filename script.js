@@ -5,17 +5,20 @@ const favBtn = document.querySelector('#fav-btn');
 const menu = document.querySelector('#menu');
 const sidebar = document.querySelector('.sidebar');
 const hollowHeart = document.querySelector('#hollowHeart i');
-
 const favQuotesTitle = document.querySelector('.fav-container h2');
 const favQuotes = document.querySelector('.fav-quotes');
 
-const x = matchMedia('(max-width:760px');
+// const x = matchMedia('(max-width:760px');
 
 // function mediaQueries() {
 //   if (x.matches) {
 //     menu.document.getElementByTagName('i').className = 'fas fa-share fa-2x';
 //   }
 // }
+
+window.onload = function () {
+  getNewQuote();
+};
 
 function showMenu() {
   sidebar.classList.toggle('show');
@@ -65,26 +68,45 @@ function showFav() {
   const quotes = JSON.parse(localStorage.getItem('quotes'));
   const authors = JSON.parse(localStorage.getItem('authors'));
 
-  quotes.forEach(function (quote) {
-    favQuotes.innerHTML += `
-      <div class="quote-box" id="quote-box">
-            <blockquote id="quote">
-              ${quote}
-            </blockquote>
-            <cite id="author">${author}</cite>
-          </div>
-          `;
-  });
-  authors.forEach(function (author) {
-    favQuotes.innerHTML += `
-      <div class="quote-box" id="quote-box">
-            <blockquote id="quote">
-              ${quote}
-            </blockquote>
-            <cite id="author">${author}</cite>
-          </div>
-          `;
-  });
+  // Create cards in favQuotes section
+
+  // Create individual Card
+  let card = document.createElement('div');
+  card.className = 'quote-box';
+  card.id = 'quote-box';
+  console.log(card);
+
+  // Create blockquote & append
+  let blockquote = document.createElement('blockquote');
+  blockquote.id = 'quote';
+  card.appendChild(blockquote);
+
+  // Create cite & append
+  let cite = document.createElement('cite');
+  cite.id = 'author';
+  card.appendChild(cite);
+
+  // Append Card to favquotes
+
+  let cards = favQuotes.card;
+
+  function createNewCard() {
+    quotes.forEach(function (quote) {
+      blockquote.innerHTML += `
+                ${quote}
+            `;
+    });
+    authors.forEach(function (author) {
+      cite.innerHTML += `
+        ${author}
+              `;
+    });
+    favQuotes.appendChild(card);
+  }
+
+  createNewCard();
+
+  console.log(card);
 }
 
 function getNewQuote() {
@@ -102,25 +124,13 @@ function getNewQuote() {
       let id;
       id = Math.floor(Math.random() * quotes.length + 1);
 
-      quoteUI.textContent = `" ${quotes[id].quote} "`;
+      quoteUI.textContent = `“ ${quotes[id].quote} ”`;
       authorUI.textContent = `${quotes[id].author}`;
     }
   };
 
   xhr.send();
 }
-
-// let storedQuote;
-
-// localStorage.setItem('quote', 'I am groot');
-// localStorage.setItem('author', 'Groot');
-// storedQuote = localStorage.getItem('quote');
-// storedAuthor = localStorage.getItem('author');
-
-// console.log(storedQuote);
-// console.log(storedAuthor);
-
-// localStorage.clear();
 
 // Event Listeners
 button.addEventListener('click', getNewQuote);
