@@ -25,7 +25,7 @@ a {
   font-size: 20px;
   width: 100%;
   height: 10vh;
-  background-color: #e30b5c;
+  background: linear-gradient(65deg, rgb(227, 11, 90) 0%, rgb(128, 8, 52) 120%);
 }
 
 #main-nav .nav-aligner {
@@ -37,15 +37,17 @@ a {
 }
 
 #main-nav .nav-aligner #website {
+  font-size: 25px;
   position: absolute;
   top: 20px;
   left: 20px;
   color: #fff;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #fff;
+  padding-bottom: 5px;
+  border-bottom: 5px #fff solid;
 }
 
 #main-nav .nav-aligner .nav-links {
+  font-size: 21px;
   text-decoration: none;
   color: #fff;
   padding: 5px 10px;
@@ -54,12 +56,11 @@ a {
   margin-left: 20px;
   margin-top: 40px;
   font-weight: bold;
-
-  transition: background-color 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 #main-nav .nav-aligner .nav-links:hover {
-  background-color: #140d75;
+  background-color: rgb(128, 8, 52);
 }
 
 #main-nav .nav-aligner .social {
@@ -174,7 +175,7 @@ a {
 .container #menu {
   color: #fff;
   position: absolute;
-  top: 100px;
+  top: 105px;
   left: 20px;
   z-index: 10;
 }
@@ -190,7 +191,7 @@ a {
   height: 400px;
   margin-top: 50px;
   margin-bottom: 50px;
-  border: 2px solid #fff;
+  border: 3px solid #fff;
   border-radius: 25px;
   padding: 20px;
 }
@@ -266,6 +267,61 @@ a {
 .container button:active,
 .container button:focus {
   outline: none;
+}
+
+.fav-container {
+  width: 100%;
+  border-top: 3px solid #ccc;
+  padding-top: 15px;
+}
+
+.fav-container button {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #e30b5c;
+  color: #fff;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 25px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  transition: all 0.15s ease-in;
+}
+
+.fav-container button:hover {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.fav-container button:active,
+.fav-container button:focus {
+  outline: none;
+}
+
+.fav-container .fav-quotes {
+  display: none;
+}
+
+.fav-container .fav-quotes.show {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.fav-container h2 {
+  display: none;
+}
+
+.fav-container h2.show {
+  display: block;
+}
+
+.fav-container .fav-quotes .quote-box {
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 10px;
+  font-size: 20px;
 }
 
 #main-footer {
