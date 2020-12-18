@@ -318,11 +318,23 @@ a {
 }
 
 .fav-container .fav-quotes .quote-box {
+  position: relative;
   border: 2px solid #ccc;
   border-radius: 25px;
   padding: 20px;
   margin: 10px;
   font-size: 20px;
+}
+
+.fav-container .fav-quotes .quote-box #delete-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 1px;
+  cursor: pointer;
+}
+
+.fav-container .fav-quotes .quote-box #delete-btn:hover {
+  color: #e30b5c;
 }
 
 #main-footer {

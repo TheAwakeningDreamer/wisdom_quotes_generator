@@ -62,6 +62,14 @@ function addToFavorites(e) {
     card.appendChild(blockquote);
     card.appendChild(cite);
 
+    // Create Delete Btn
+    let deleteBtn = document.createElement('a');
+    deleteBtn.id = 'delete-btn';
+    let dltIcon = document.createElement('i');
+    dltIcon.className = 'fas fa-times fa-2x';
+    deleteBtn.appendChild(dltIcon);
+    card.appendChild(deleteBtn);
+
     // Quote
     quotes.forEach(function (quote) {
       blockquote.textContent = `${quote}`;
