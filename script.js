@@ -208,7 +208,8 @@ function addToFavorites(e) {
 
 function showFav() {
   if (favQuotes.hasChildNodes()) {
-    favQuotesTitle.className = 'show';
+    // where it bugs
+    favQuotesTitle.className = 'fav-quotes show';
     favQuotes.className = 'fav-quotes show';
     favBtn.textContent = 'Hide Favs';
   } else {
