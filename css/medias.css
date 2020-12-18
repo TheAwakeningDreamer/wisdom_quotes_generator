@@ -249,6 +249,11 @@
     outline: none;
   }
 
+  .fav-container .fav-quotes.show {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   #main-footer {
     bottom: 0;
     left: 0;

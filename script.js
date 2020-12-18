@@ -9,8 +9,9 @@ const favQuotesTitle = document.querySelector('.fav-container h2');
 const favQuotes = document.querySelector('.fav-quotes');
 
 // Show Menu when click
-function showMenu() {
+function showMenu(e) {
   sidebar.classList.toggle('show');
+  e.preventDefault();
 }
 
 // Add to favorite
