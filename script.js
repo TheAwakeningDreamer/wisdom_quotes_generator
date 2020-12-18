@@ -14,7 +14,24 @@ document.addEventListener('DOMContentLoaded', getNewQuote);
 document.addEventListener('DOMContentLoaded', getFavs);
 
 // Fixed menu scroll
-console.log(menu.offsetTop);
+window.onscroll = function () {
+  sticky();
+};
+console.log(sidebar.offsetTop);
+
+function sticky() {
+  if (window.pageYOffset <= sidebar.offsetTop) {
+    menu.style.position = 'absolute';
+    menu.style.top = '105px';
+    sidebar.style.position = 'absolute';
+    sidebar.style.top = '10vh';
+  } else {
+    menu.style.position = 'fixed';
+    menu.style.top = '15px';
+    sidebar.style.position = 'fixed';
+    sidebar.style.top = 0;
+  }
+}
 
 // Show Menu when click
 function showMenu(e) {
@@ -69,14 +86,41 @@ function getFavs() {
   });
   favQuotes.appendChild(card);
 
+  function removeQuoteFromLS(card) {
+    let quotes;
+    if (localStorage.getItem('quotes') === null) {
+      quotes = [];
+    } else {
+      quotes = JSON.parse(localStorage.getItem('quotes'));
+    }
+
+    let authors;
+    if (localStorage.getItem('authors') === null) {
+      authors = [];
+    } else {
+      authors = JSON.parse(localStorage.getItem('authors'));
+    }
+
+    quotes.forEach(function (quote) {
+      blockquote.textContent = `${quote}`;
+    });
+    authors.forEach(function (author) {
+      cite.textContent = `${author}`;
+    });
+  }
+
   // Delete quote from favs
   function deleteQuote() {
     deleteBtn.parentElement.remove();
 
+    if (!favQuotes.hasChildNodes()) {
+      favBtn.textContent = 'Show Favs';
+      favQuotesTitle.classList.toggle('show');
+      favQuotes.classList.toggle('show');
+    }
     // Remove from LS
     removeQuoteFromLS(deleteBtn.parentElement);
   }
-
   deleteBtn.addEventListener('click', deleteQuote);
 }
 
@@ -152,6 +196,7 @@ function addToFavorites(e) {
     // Delete quote from favs
     function deleteQuote() {
       deleteBtn.parentElement.remove();
+      showFav();
     }
 
     deleteBtn.addEventListener('click', deleteQuote);
@@ -159,13 +204,15 @@ function addToFavorites(e) {
 }
 
 function showFav() {
-  favQuotesTitle.classList.toggle('show');
-  favQuotes.classList.toggle('show');
-
-  if (favQuotesTitle.classList.contains('show')) {
+  if (favQuotes.hasChildNodes()) {
+    favQuotesTitle.classList.toggle('show');
+    favQuotes.classList.toggle('show');
     favBtn.textContent = 'Hide Favs';
   } else {
     favBtn.textContent = 'Show Favs';
+    favQuotes.className = 'fav-quotes';
+    favQuotesTitle.classList.remove('show');
+    favQuotes.classList.remove('show');
   }
 }
 

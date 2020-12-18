@@ -1,4 +1,4 @@
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   #main-nav {
     position: relative;
     font-size: 16px;
@@ -83,14 +83,14 @@
 
   .container #menu {
     color: #fff;
-    position: absolute;
+    position: fixed;
     top: 50px;
     left: 20px;
     z-index: 10;
   }
 
   .container .sidebar {
-    display: absolute;
+    display: fixed;
     top: 0;
     bottom: 0;
     width: 100%;
@@ -111,6 +111,7 @@
   }
 
   .container .sidebar h2 {
+    padding-top: 20px;
     padding-bottom: 10px;
     border-bottom: 3px solid #fff;
   }
