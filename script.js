@@ -8,19 +8,88 @@ const hollowHeart = document.querySelector('#hollowHeart i');
 const favQuotesTitle = document.querySelector('.fav-container h2');
 const favQuotes = document.querySelector('.fav-quotes');
 
+// Random quote on load
+document.addEventListener('DOMContentLoaded', getNewQuote);
+// Get favs
+document.addEventListener('DOMContentLoaded', getFavs);
+
+// Fixed menu scroll
+console.log(menu.offsetTop);
+
 // Show Menu when click
 function showMenu(e) {
   sidebar.classList.toggle('show');
   e.preventDefault();
 }
 
+// Get Favs from LS
+function getFavs() {
+  let quotes;
+  if (localStorage.getItem('quotes') === null) {
+    quotes = [];
+  } else {
+    quotes = JSON.parse(localStorage.getItem('quotes'));
+  }
+
+  let authors;
+  if (localStorage.getItem('authors') === null) {
+    authors = [];
+  } else {
+    authors = JSON.parse(localStorage.getItem('authors'));
+  }
+
+  // Create Cards Anew
+  // Create individual card
+  let card = document.createElement('div');
+  card.className = 'quote-box';
+  card.id = 'quote-box';
+
+  // Create blockquote & cite + append to div
+  let blockquote = document.createElement('blockquote');
+  blockquote.id = 'quote';
+  let cite = document.createElement('cite');
+  cite.id = 'author';
+  card.appendChild(blockquote);
+  card.appendChild(cite);
+
+  // Create Delete Btn
+  let deleteBtn = document.createElement('a');
+  deleteBtn.id = 'delete-btn';
+  let dltIcon = document.createElement('i');
+  dltIcon.className = 'fas fa-times fa-2x';
+  deleteBtn.appendChild(dltIcon);
+  card.appendChild(deleteBtn);
+
+  // Generate Quote Fav Cards
+  quotes.forEach(function (quote) {
+    blockquote.textContent = `${quote}`;
+  });
+  authors.forEach(function (author) {
+    cite.textContent = `${author}`;
+  });
+  favQuotes.appendChild(card);
+
+  // Delete quote from favs
+  function deleteQuote() {
+    deleteBtn.parentElement.remove();
+
+    // Remove from LS
+    removeQuoteFromLS(deleteBtn.parentElement);
+  }
+
+  deleteBtn.addEventListener('click', deleteQuote);
+}
+
 // Add to favorite
 function addToFavorites(e) {
+  e.preventDefault();
+
   // Change icon
   hollowHeart.classList.toggle('far');
   hollowHeart.classList.toggle('fas');
 
   if (hollowHeart.classList.contains('fas')) {
+    // Define Variables
     const newFavQuote =
       button.parentElement.previousElementSibling.lastElementChild.children[0]
         .textContent;
@@ -28,6 +97,7 @@ function addToFavorites(e) {
       button.parentElement.previousElementSibling.lastElementChild.children[1]
         .textContent;
     // Store in Local Storage
+
     let quotes;
     if (localStorage.getItem('quotes') === null) {
       quotes = [];
@@ -70,26 +140,22 @@ function addToFavorites(e) {
     deleteBtn.appendChild(dltIcon);
     card.appendChild(deleteBtn);
 
-    // Quote
+    // Generate Quote Fav Cards
     quotes.forEach(function (quote) {
-      blockquote.textContent = `${quote}`;
+      blockquote.textContent = `${newFavQuote}`;
     });
-
     authors.forEach(function (author) {
-      cite.textContent = `${author}`;
+      cite.textContent = `${newFavAuthor}`;
     });
-
-    console.log(card);
-
     favQuotes.appendChild(card);
 
+    // Delete quote from favs
     function deleteQuote() {
       deleteBtn.parentElement.remove();
     }
+
     deleteBtn.addEventListener('click', deleteQuote);
   }
-
-  e.preventDefault();
 }
 
 function showFav() {
@@ -126,14 +192,8 @@ function getNewQuote() {
   xhr.send();
 }
 
-function deleteQuote(e) {
-  console.log('123');
-  e.preventDefault();
-}
-
 // Event Listeners
 button.addEventListener('click', getNewQuote);
 menu.addEventListener('click', showMenu);
 hollowHeart.addEventListener('click', addToFavorites);
 favBtn.addEventListener('click', showFav);
-document.addEventListener('DOMContentLoaded', getNewQuote);
