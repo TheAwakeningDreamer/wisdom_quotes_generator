@@ -21,15 +21,18 @@ console.log(sidebar.offsetTop);
 
 function sticky() {
   if (window.pageYOffset <= sidebar.offsetTop) {
-    menu.style.position = 'absolute';
-    menu.style.top = '105px';
     sidebar.style.position = 'absolute';
     sidebar.style.top = '10vh';
   } else {
-    menu.style.position = 'fixed';
-    menu.style.top = '15px';
     sidebar.style.position = 'fixed';
     sidebar.style.top = 0;
+  }
+  if (window.pageYOffset <= menu.offsetTop) {
+    menu.style.position = 'fixed';
+    menu.style.top = '105px';
+  } else {
+    menu.style.position = 'fixed';
+    menu.style.top = '15px';
   }
 }
 
@@ -205,8 +208,8 @@ function addToFavorites(e) {
 
 function showFav() {
   if (favQuotes.hasChildNodes()) {
-    favQuotesTitle.classList.toggle('show');
-    favQuotes.classList.toggle('show');
+    favQuotesTitle.className = 'show';
+    favQuotes.className = 'fav-quotes show';
     favBtn.textContent = 'Hide Favs';
   } else {
     favBtn.textContent = 'Show Favs';
