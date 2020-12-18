@@ -328,8 +328,8 @@ a {
 
 .fav-container .fav-quotes .quote-box #delete-btn {
   position: absolute;
-  right: 10px;
-  bottom: 1px;
+  right: 20px;
+  bottom: 10px;
   cursor: pointer;
 }
 

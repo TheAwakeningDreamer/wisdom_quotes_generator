@@ -82,6 +82,11 @@ function addToFavorites(e) {
     console.log(card);
 
     favQuotes.appendChild(card);
+
+    function deleteQuote() {
+      deleteBtn.parentElement.remove();
+    }
+    deleteBtn.addEventListener('click', deleteQuote);
   }
 
   e.preventDefault();
@@ -119,6 +124,11 @@ function getNewQuote() {
   };
 
   xhr.send();
+}
+
+function deleteQuote(e) {
+  console.log('123');
+  e.preventDefault();
 }
 
 // Event Listeners
